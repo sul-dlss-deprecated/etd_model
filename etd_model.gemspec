@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
      "lib/etd_model.rb",
      "lib/etd_model/etd.rb",
      "lib/etd_model/part.rb",
-     "pkg/etd_model-0.0.1.gem",
      "test/helper.rb",
      "test/test_etd_model.rb"
   ]
