@@ -1,3 +1,4 @@
+require 'active_fedora'
 
 module EtdModel
 

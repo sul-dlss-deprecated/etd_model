@@ -10,12 +10,12 @@ begin
     gem.email = "dougkim@stanford.edu"
     gem.homepage = "http://github.com/dougkim/etd_model"
     gem.authors = ["Douglas Kim"]
-    gem.add_dependency 'active-fedora', '= 1.1.13'
+    gem.add_dependency 'active-fedora', '1.1.13'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
+rescue LoadError => l
+  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler: #{l.to_s}"
 end
 
 require 'rake/testtask'
