@@ -10,7 +10,7 @@ begin
     gem.email = "dougkim@stanford.edu"
     gem.homepage = "http://github.com/dougkim/etd_model"
     gem.authors = ["Douglas Kim"]
-    gem.add_dependency 'active-fedora', '1.1.13'
+    gem.add_dependency 'active-fedora', '1.2.6'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
