@@ -14,4 +14,11 @@ describe EtdModel::Etd do
     @etd = EtdModel::Etd.new
     @etd.should respond_to(:get_embargo_date)
   end
+  
+  it "handles the Term element" do
+    @etd = EtdModel::Etd.new
+    
+    props_ds = @etd.datastreams['properties']
+    props_ds.should respond_to(:term_values)
+  end
 end

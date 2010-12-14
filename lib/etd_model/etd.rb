@@ -26,6 +26,8 @@ module EtdModel
       m.field "cclicensetype", :string
       m.field "embargo", :string
       m.field "external_visibility", :string
+      
+      m.field "term", :string
 
       m.field "univid", :string                   # PS:univid
       m.field "sunetid", :string                  # PS:sunetid
