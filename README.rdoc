@@ -6,7 +6,7 @@ and the etd-robots to share code.  The projects should derive their own local ve
 Common methods should be added to the EtdModel::EtdHelper.
 
 == Releases
-
+- 0.0.3  Updated to use Active Fedora 1.2.6
 - 0.0.2  Moved #get_embargo_date method from the hydra_etd app to the EtdModel::EtdHelper module
 - 0.0.1  Initial release
 
