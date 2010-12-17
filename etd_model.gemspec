@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{etd_model}
-  s.version = "0.0.2"
+  s.version = "0.0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Douglas Kim"]
-  s.date = %q{2010-09-17}
+  s.date = %q{2010-12-16}
   s.description = %q{Contains classes that define the Fedora content model for electronic theses and dissertations.}
   s.email = %q{dougkim@stanford.edu}
   s.extra_rdoc_files = [
@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
      "README.rdoc"
   ]
   s.files = [
-    "LICENSE",
+    ".gitignore",
+     "LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
