@@ -28,6 +28,7 @@ module EtdModel
       m.field "external_visibility", :string
       
       m.field "term", :string
+      m.field "sub", :string
 
       m.field "univid", :string                   # PS:univid
       m.field "sunetid", :string                  # PS:sunetid
