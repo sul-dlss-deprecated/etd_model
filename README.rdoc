@@ -6,6 +6,7 @@ and the etd-robots to share code.  The projects should derive their own local ve
 Common methods should be added to the EtdModel::EtdHelper.
 
 == Releases
+- 1.0.0   Gem built without Jeweler.  Using bundler and rvm.
 - 0.0.3.1 Handle term element with Active Fedora 1.2.6
 - 0.0.3  Updated to use Active Fedora 1.2.6
 - 0.0.2.1 Handle term element.  Last version compatible with active_fedora 1.1.13
@@ -14,4 +15,4 @@ Common methods should be added to the EtdModel::EtdHelper.
 
 == Copyright
 
-Copyright (c) 2010 Douglas Kim. See LICENSE for details.
+Copyright (c) 2011 Stanford University Library. See LICENSE for details.
