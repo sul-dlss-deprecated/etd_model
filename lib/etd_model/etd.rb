@@ -1,4 +1,6 @@
 require 'active_fedora'
+require 'datastreams/embargo_metadata_ds'
+require 'datastreams/events_ds'
 
 module EtdModel
 
@@ -70,6 +72,8 @@ module EtdModel
     has_metadata :name => "DC", :type => ActiveFedora::QualifiedDublinCoreDatastream do |m|
     end
 
+    has_metadata :name => "embargoMetadata", :type => EmbargoMetadataDS
+    has_metadata :name => 'events', :type => EventsDS
   end
 
 end

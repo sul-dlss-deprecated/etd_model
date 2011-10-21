@@ -6,6 +6,7 @@ and the etd-robots to share code.  The projects should derive their own local ve
 Common methods should be added to the EtdModel::EtdHelper.
 
 == Releases
+- 1.1.0 Added embargoMetadata and events datastreams to the Etd model
 - 1.0.0   Gem built without Jeweler.  Using bundler and rvm.
 - 0.0.3.1 Handle term element with Active Fedora 1.2.6
 - 0.0.3  Updated to use Active Fedora 1.2.6

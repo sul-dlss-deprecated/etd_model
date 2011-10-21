@@ -30,4 +30,16 @@ describe EtdModel::Etd do
     props_ds = @etd.datastreams['properties']
     props_ds.should respond_to(:sub_values)
   end
+  
+  it "has an events datastream" do
+    @etd = EtdModel::Etd.new
+    events = @etd.datastreams['events']
+    events.class.should == EventsDS
+  end
+  
+  it "has an embargoMetadata datastream" do
+    @etd = EtdModel::Etd.new
+    eds = @etd.datastreams['embargoMetadata']
+    eds.class.should == EmbargoMetadataDS 
+  end
 end
