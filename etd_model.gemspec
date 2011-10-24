@@ -4,7 +4,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "etd_model"
-  s.version     = "1.1.0"
+  s.version     = "1.1.1"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Douglas Kim", "Willy Mene"]
   s.email       = ["wmene@stanford.edu"]
@@ -13,8 +13,8 @@ Gem::Specification.new do |s|
  
   s.required_rubygems_version = ">= 1.3.6"
   
-  s.add_dependency "active-fedora", "1.2.6"
-  s.add_dependency "dor-services", "2.2.0"
+  s.add_dependency "active-fedora", "< 3.0.0"
+  s.add_dependency "dor-services", ">= 2.2.1"
   
   s.add_development_dependency "lyberteam-devel", ">=0.1.1"
   s.add_development_dependency "mediashelf-loggable", "0.4"
