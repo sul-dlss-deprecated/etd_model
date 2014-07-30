@@ -23,8 +23,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rdoc"
   s.add_development_dependency "rspec", "< 2.0" # We're not ready to upgrade to rspec 2
   s.add_development_dependency "ruby-debug"
-  
-  s.files        = Dir.glob("lib/**/*") + %w(LICENSE README.rdoc)
+
+  s.files        = Dir.glob("lib/**/*") + %w(LICENSE README.md)
   s.require_path = 'lib'
 end
-
