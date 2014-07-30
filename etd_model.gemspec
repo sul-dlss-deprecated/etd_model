@@ -15,8 +15,7 @@ Gem::Specification.new do |s|
   
   s.add_dependency "active-fedora", "< 3.0.0"
   s.add_dependency "dor-services", ">= 2.2.1"
-  
-  s.add_development_dependency "lyberteam-devel", ">=0.1.1"
+
   s.add_development_dependency "mediashelf-loggable", "0.4"
   s.add_development_dependency "rake", ">=0.8.7"
   s.add_development_dependency "rcov"
