@@ -1,17 +1,16 @@
-require 'active_fedora'
-require 'datastreams/embargo_metadata_ds'
-require 'datastreams/events_ds'
-
 module EtdModel
 
   class Etd < ActiveFedora::Base
     include EtdHelper
+    include Dor::Embargoable
+    include Dor::Eventable
+    
 
-    has_relationship "parts", :is_part_of, :inbound => true
-    has_relationship "supplemental_files", :is_constituent_of, :inbound => true
-    has_relationship "permission_files", :is_dependent_of, :inbound => true
+    has_many "parts", :property => :is_part_of, :inbound => true
+    has_many "supplemental_files", :property => :is_constituent_of, :inbound => true
+    has_many "permission_files", :property => :is_dependent_of, :inbound => true
 
-    has_metadata :name => "properties", :type => ActiveFedora::MetadataDatastream do |m|
+    has_metadata :name => "properties", :type => ActiveFedora::SimpleDatastream do |m|
       m.field "name",  :string                    # PS:name
       m.field "prefix", :string                   # PS:prefix
       m.field "suffix", :string                   # PS:suffix
@@ -57,7 +56,7 @@ module EtdModel
       m.field "symphonyStatus", :string
     end
 
-    has_metadata :name => "workflow", :type => ActiveFedora::MetadataDatastream do |m|
+    has_metadata :name => "workflow", :type => ActiveFedora::SimpleDatastream do |m|
       m.field "citation_verified", :string
       m.field "abstract_provided", :string
       m.field "dissertation_uploaded", :string
@@ -72,9 +71,6 @@ module EtdModel
     has_metadata :name => "DC", :type => ActiveFedora::QualifiedDublinCoreDatastream do |m|
     end
 
-    has_metadata :name => "embargoMetadata", :type => EmbargoMetadataDS
-    has_metadata :name => 'events', :type => EventsDS
   end
 
 end
-

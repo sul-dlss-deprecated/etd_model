@@ -13,12 +13,12 @@ Gem::Specification.new do |s|
  
   s.required_rubygems_version = ">= 1.3.6"
   
-  s.add_dependency "active-fedora", "< 3.0.0"
-  s.add_dependency "dor-services", ">= 2.2.1"
+  s.add_dependency "active-fedora"
+  s.add_dependency "dor-services", ">= 3.6.0"
+  s.add_dependency "addressable", "2.3.5"
 
-  s.add_development_dependency "mediashelf-loggable", "0.4"
+  s.add_development_dependency "mediashelf-loggable"
   s.add_development_dependency "rake", ">=0.8.7"
-  s.add_development_dependency "rcov"
   s.add_development_dependency "rdoc"
   s.add_development_dependency "rspec", "< 2.0" # We're not ready to upgrade to rspec 2
   s.add_development_dependency "ruby-debug"
