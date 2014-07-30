@@ -1,45 +1,35 @@
-
-
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
 describe EtdModel::Etd do
-  before(:all) do
-      Rails.stub!(:logger).as_null_object
-      ActiveFedora::SolrService.register('http://localhost:8080')
-      Fedora::Repository.register('http://localhost:8080')
-      
-      Fedora::Repository.stub!(:instance).and_return(stub('repo').as_null_object)
-  end
   
   it "should respond to #get_embargo_date" do
     @etd = EtdModel::Etd.new
-    @etd.should respond_to(:get_embargo_date)
+    expect(@etd).to respond_to(:get_embargo_date)
   end
   
   it "handles the Term element" do
     @etd = EtdModel::Etd.new
     
     props_ds = @etd.datastreams['properties']
-    props_ds.should respond_to(:term_values)
+    expect(props_ds).to respond_to(:term_values)
   end
   
   it "handles the <sub> element" do
     @etd = EtdModel::Etd.new
-    
-    
+
     props_ds = @etd.datastreams['properties']
-    props_ds.should respond_to(:sub_values)
+    expect(props_ds.sub.to_a).to be_empty
   end
   
   it "has an events datastream" do
     @etd = EtdModel::Etd.new
     events = @etd.datastreams['events']
-    events.class.should == EventsDS
+    expect(events).to be_a_kind_of Dor::EventsDS
   end
   
   it "has an embargoMetadata datastream" do
     @etd = EtdModel::Etd.new
     eds = @etd.datastreams['embargoMetadata']
-    eds.class.should == EmbargoMetadataDS 
+    expect(eds).to be_a_kind_of Dor::EmbargoMetadataDS 
   end
 end
