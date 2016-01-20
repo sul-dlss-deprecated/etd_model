@@ -1,13 +1,12 @@
 module EtdModel
   module EtdHelper
-
     def get_embargo_date
       props_ds = datastreams['properties']
       regaction = props_ds.regactiondttm_values.first
       embargo = props_ds.embargo_values.first
-      if(props_ds.regapproval_values.first =~ /^approved$/i && 
-        embargo != nil && embargo != '' &&
-        regaction != nil && regaction != '')
+      if props_ds.regapproval_values.first =~ /^approved$/i &&
+         !embargo.nil? && embargo != '' &&
+         !regaction.nil? && regaction != ''
         case embargo
         when /6 months/i
           embargo_months = 6
@@ -22,6 +21,5 @@ module EtdModel
       end
       nil
     end
-
   end
 end

@@ -41,73 +41,9 @@ Style/Documentation:
     - 'lib/etd_model/etd_helper.rb'
     - 'lib/etd_model/part.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: empty_lines, no_empty_lines
-Style/EmptyLinesAroundClassBody:
-  Exclude:
-    - 'lib/etd_model/etd.rb'
-    - 'lib/etd_model/part.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: empty_lines, no_empty_lines
-Style/EmptyLinesAroundModuleBody:
-  Exclude:
-    - 'lib/etd_model/etd.rb'
-    - 'lib/etd_model/etd_helper.rb'
-    - 'lib/etd_model/part.rb'
-
 # Offense count: 20
 # Cop supports --auto-correct.
 # Configuration parameters: SupportedStyles, UseHashRocketsWithSymbolValues.
 # SupportedStyles: ruby19, ruby19_no_mixed_keys, hash_rockets
 Style/HashSyntax:
   EnforcedStyle: hash_rockets
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/LeadingCommentSpace:
-  Exclude:
-    - 'spec/spec_helper.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: IncludeSemanticChanges.
-Style/NonNilCheck:
-  Exclude:
-    - 'lib/etd_model/etd_helper.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/SpaceAfterControlKeyword:
-  Exclude:
-    - 'lib/etd_model/etd_helper.rb'
-    - 'spec/spec_helper.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: use_perl_names, use_english_names
-Style/SpecialGlobalVars:
-  Enabled: false
-
-# Offense count: 88
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Enabled: false
-
-# Offense count: 15
-# Cop supports --auto-correct.
-Style/TrailingWhitespace:
-  Exclude:
-    - 'etd_model.gemspec'
-    - 'lib/etd_model/etd.rb'
-    - 'lib/etd_model/etd_helper.rb'
-    - 'lib/etd_model/part.rb'
-    - 'spec/etd_model/etd_spec.rb'
-    - 'spec/spec_helper.rb'

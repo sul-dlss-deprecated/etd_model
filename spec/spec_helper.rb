@@ -3,11 +3,10 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'rspec'
 
-#require 'rubygems'
+# require 'rubygems'
 require 'etd_model'
 
 RSpec.configure do |config|
-  
 end
 
 def class_exists?(class_name)
@@ -17,4 +16,4 @@ rescue NameError
   return false
 end
 
-Rails = Object.new unless(class_exists? 'Rails')
+Rails = Object.new unless class_exists? 'Rails'
