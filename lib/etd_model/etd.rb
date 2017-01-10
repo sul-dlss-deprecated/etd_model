@@ -4,9 +4,9 @@ module EtdModel
     include Dor::Embargoable
     include Dor::Eventable
 
-    has_many 'parts', :property => :is_part_of, :inbound => true
-    has_many 'supplemental_files', :property => :is_constituent_of, :inbound => true
-    has_many 'permission_files', :property => :is_dependent_of, :inbound => true
+    has_many 'parts', :property => :is_part_of
+    has_many 'supplemental_files', :property => :is_constituent_of
+    has_many 'permission_files', :property => :is_dependent_of
 
     has_metadata :name => 'properties', :type => ActiveFedora::SimpleDatastream do |m|
       m.field 'name',  :string                    # PS:name

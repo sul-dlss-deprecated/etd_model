@@ -2,9 +2,9 @@ module EtdModel
   module EtdHelper
     def get_embargo_date
       props_ds = datastreams['properties']
-      regaction = props_ds.regactiondttm_values.first
-      embargo = props_ds.embargo_values.first
-      if props_ds.regapproval_values.first =~ /^approved$/i &&
+      regaction = props_ds.regactiondttm.first
+      embargo = props_ds.embargo.first
+      if props_ds.regapproval.first =~ /^approved$/i &&
          !embargo.nil? && embargo != '' &&
          !regaction.nil? && regaction != ''
         case embargo
