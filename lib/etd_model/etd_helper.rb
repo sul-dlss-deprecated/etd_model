@@ -17,7 +17,7 @@ module EtdModel
         else
           embargo_months = 0
         end
-        return Time.parse(regaction).months_since(embargo_months)
+        return Time.strptime(regaction, "%m/%d/%Y %H:%M:%S") + embargo_months.months
       end
       nil
     end
