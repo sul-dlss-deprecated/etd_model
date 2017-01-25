@@ -4,7 +4,7 @@ $LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'etd_model'
-  s.version     = '2.1.1'
+  s.version     = '2.1.2'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Douglas Kim', 'Willy Mene']
   s.email       = ['wmene@stanford.edu']
