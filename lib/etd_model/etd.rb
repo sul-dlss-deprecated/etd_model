@@ -5,8 +5,8 @@ module EtdModel
     include Dor::Eventable
 
     has_many 'parts', :property => :is_part_of
-    has_many 'supplemental_files', :property => :is_constituent_of
-    has_many 'permission_files', :property => :is_dependent_of
+    has_many 'supplemental_files', :property => :is_constituent_of, class_name: 'EtdModel::Part'
+    has_many 'permission_files', :property => :is_dependent_of, class_name: 'EtdModel::Part'
 
     has_metadata :name => 'properties', :type => ActiveFedora::SimpleDatastream do |m|
       m.field 'name',  :string                    # PS:name
