@@ -5,8 +5,15 @@ describe EtdModel::Etd do
     @etd = EtdModel::Etd.new
   end
 
-  it 'should respond to #get_embargo_date' do
-    expect(@etd).to respond_to(:get_embargo_date)
+  describe '#get_embargo_date' do
+    it 'calculates the data of the embargo release' do
+      t = Time.now.beginning_of_hour
+      @etd.datastreams['properties'].regactiondttm = [t.strftime('%m/%d/%Y %H:%M:%S')]
+      @etd.datastreams['properties'].regapproval = ['approved']
+      @etd.datastreams['properties'].embargo = ['6 months']
+
+      expect(@etd.get_embargo_date).to eq t + 6.months
+    end
   end
 
   it 'handles the Term element' do
