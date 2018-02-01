@@ -4,11 +4,11 @@ module EtdModel
     include Dor::Embargoable
     include Dor::Eventable
 
-    has_many 'parts', :property => :is_part_of
-    has_many 'supplemental_files', :property => :is_constituent_of, class_name: 'EtdModel::Part'
-    has_many 'permission_files', :property => :is_dependent_of, class_name: 'EtdModel::Part'
+    has_many :parts, :property => :is_part_of, class_name: 'Part'
+    has_many :supplemental_files, :property => :is_constituent_of, class_name: 'Part'
+    has_many :permission_files, :property => :is_dependent_of, class_name: 'Part'
 
-    has_metadata :name => 'properties', :type => ActiveFedora::SimpleDatastream do |m|
+    has_metadata :name => 'properties', :type => ActiveFedora::SimpleDatastream, :versionable => false do |m|
       m.field 'name',  :string                    # PS:name
       m.field 'prefix', :string                   # PS:prefix
       m.field 'suffix', :string                   # PS:suffix
@@ -54,7 +54,7 @@ module EtdModel
       m.field 'symphonyStatus', :string
     end
 
-    has_metadata :name => 'workflow', :type => ActiveFedora::SimpleDatastream do |m|
+    has_metadata :name => 'workflow', :type => ActiveFedora::SimpleDatastream, :versionable => false do |m|
       m.field 'citation_verified', :string
       m.field 'abstract_provided', :string
       m.field 'dissertation_uploaded', :string
@@ -66,7 +66,6 @@ module EtdModel
       m.field 'submitted_to_registrar', :string
     end
 
-    has_metadata :name => 'DC', :type => ActiveFedora::QualifiedDublinCoreDatastream do |m|
-    end
+    has_metadata :name => 'DC', type: Dor::SimpleDublinCoreDs, versionable: false, label: 'DC', control_group: 'X'
   end
 end
