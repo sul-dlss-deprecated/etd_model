@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/sul-dlss/etd_model.png?branch=master)](https://travis-ci.org/sul-dlss/etd_model) [![Coverage Status](https://coveralls.io/repos/sul-dlss/etd_model/badge.png)](https://coveralls.io/r/sul-dlss/etd_model) [![Dependency Status](https://gemnasium.com/sul-dlss/etd_model.svg)](https://gemnasium.com/sul-dlss/etd_model)
+[![Build Status](https://travis-ci.org/sul-dlss/etd_model.png?branch=master)](https://travis-ci.org/sul-dlss/etd_model) [![Coverage Status](https://coveralls.io/repos/sul-dlss/etd_model/badge.png)](https://coveralls.io/r/sul-dlss/etd_model)
 
 # etd_model
 
