@@ -1,8 +1,7 @@
 module EtdModel
-  class Etd < ActiveFedora::Base
+  class Etd < Dor::Abstract
     include EtdHelper
     include Dor::Embargoable
-    include Dor::Eventable
 
     has_many :parts, :property => :is_part_of, class_name: 'Part'
     has_many :supplemental_files, :property => :is_constituent_of, class_name: 'Part'
