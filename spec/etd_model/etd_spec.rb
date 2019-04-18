@@ -1,18 +1,30 @@
 require 'spec_helper'
 
-describe EtdModel::Etd do
-  before :each do
+RSpec.describe EtdModel::Etd do
+  before do
     @etd = EtdModel::Etd.new
   end
 
   describe '#get_embargo_date' do
     it 'calculates the data of the embargo release' do
+      expect(Deprecation).to receive(:warn)
       t = Time.now.beginning_of_hour
       @etd.datastreams['properties'].regactiondttm = [t.strftime('%m/%d/%Y %H:%M:%S')]
       @etd.datastreams['properties'].regapproval = ['approved']
       @etd.datastreams['properties'].embargo = ['6 months']
 
       expect(@etd.get_embargo_date).to eq t + 6.months
+    end
+  end
+
+  describe '#etd_embargo_date' do
+    it 'calculates the data of the embargo release' do
+      t = Time.now.beginning_of_hour
+      @etd.datastreams['properties'].regactiondttm = [t.strftime('%m/%d/%Y %H:%M:%S')]
+      @etd.datastreams['properties'].regapproval = ['approved']
+      @etd.datastreams['properties'].embargo = ['6 months']
+
+      expect(@etd.etd_embargo_date).to eq t + 6.months
     end
   end
 

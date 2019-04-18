@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'dor-services', '~> 6.0'
   s.add_dependency 'active-fedora', '~> 8.4'
+  s.add_dependency 'deprecation'
 
   s.add_development_dependency 'coveralls'
   s.add_development_dependency 'rake'

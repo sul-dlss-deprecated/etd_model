@@ -1,8 +1,8 @@
 module EtdModel
   class Etd < ActiveFedora::Base
-    include EtdHelper
     include Dor::Embargoable
     include Dor::Eventable
+    extend Deprecation
 
     has_many :parts, :property => :is_part_of, class_name: 'Part'
     has_many :supplemental_files, :property => :is_constituent_of, class_name: 'Part'
@@ -67,5 +67,29 @@ module EtdModel
     end
 
     has_metadata :name => 'DC', type: Dor::SimpleDublinCoreDs, versionable: false, label: 'DC', control_group: 'X'
+
+    def etd_embargo_date
+      regaction = properties.regactiondttm.first
+      embargo = properties.embargo.first
+      if properties.regapproval.first =~ /^approved$/i &&
+         !embargo.nil? && embargo != '' &&
+         !regaction.nil? && regaction != ''
+        case embargo
+        when /6 months/i
+          embargo_months = 6
+        when /1 year/i
+          embargo_months = 12
+        when /2 years/i
+          embargo_months = 24
+        else
+          embargo_months = 0
+        end
+        return Time.strptime(regaction, "%m/%d/%Y %H:%M:%S") + embargo_months.months
+      end
+      nil
+    end
+
+    alias get_embargo_date etd_embargo_date
+    deprecation_deprecate get_embargo_date: "use etd_embargo_date instead"
   end
 end
