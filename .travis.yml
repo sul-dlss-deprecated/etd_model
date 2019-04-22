@@ -7,3 +7,6 @@ notifications:
 rvm:
   - 2.5.3
 
+env:
+  - 'DOR_SERVICES="~> 6.8.0"'
+  - 'DOR_SERVICES=master'

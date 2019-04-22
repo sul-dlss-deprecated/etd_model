@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'ETD content model used by the SULAIR Digital Library'
   s.description = 'Contains classes that define the Fedora content model for electronic theses and dissertations.'
 
-  s.add_dependency 'dor-services', '~> 6.0'
+  s.add_dependency 'dor-services', '>= 6.0'
   s.add_dependency 'active-fedora', '~> 8.4'
 
   s.add_development_dependency 'coveralls'
