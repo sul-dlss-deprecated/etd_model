@@ -1,9 +1,8 @@
 module EtdModel
-  class Etd < ActiveFedora::Base
+  class Etd < Dor::Abstract
     include Dor::Embargoable
-    include Dor::Eventable
     extend Deprecation
-
+    
     has_many :parts, :property => :is_part_of, class_name: 'Part'
     has_many :supplemental_files, :property => :is_constituent_of, class_name: 'Part'
     has_many :permission_files, :property => :is_dependent_of, class_name: 'Part'
